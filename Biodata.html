@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>]
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<title>My Website</title>
+	<style>
+		* {
+			margin:0 ;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.sidebar{
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 70px;
+			background-color:#414345 ;
+			padding: .4rem .8rem;
+			transition: all 0.5s ease;
+		}
+
+		.sidebar.active ~ .main-content{
+			left: 250px;
+			width: calc(100% - 200px);
+		}
+
+		.sidebar.active{
+			width: 210px;
+		}
+
+		.sidebar #btn{
+			position: absolute;
+			color: #efead0;
+			top: .4rem;
+			left: 50%;
+			font-size: 1.2rem;
+			line-height: 50px;
+			transform: translateX(-50%);
+			cursor: pointer;
+		}
+
+		.sidebar.active #btn {
+			left: 90%;
+		}
+
+		.sidebar .top .logo{
+			color: #efead0;
+			display: flex;
+			height: 50px;	
+			width: 100%;	
+			align-items: center;	
+			pointer-events: none;
+			opacity: 0;
+  			transition: opacity 0.3s ease-in;
+		}
+
+		.sidebar.active .top .logo{
+			opacity: 1;
+		}
+
+		.top .logo{
+			font-size: 2rem;
+			margin-right: 20px;
+		}
+
+		.user{
+			display: flex;
+			align-items: center;
+			margin: 1rem 0;
+		}
+
+		.user p {
+			color: #efead0;
+			opacity: 1;
+			margin-left: 1rem
+		}
+		
+
+		.sidebar p {
+			opacity: 0;
+		}
+
+		.sidebar.active p {
+			opacity: 1;
+		}
+
+		.sidebar ul li {
+			position: relative;
+			list-style-type: none;
+			height: 50px;
+			width: 90%;
+			margin: 0.8rem auto;
+			line-height: 50px;
+		}
+
+		.sidebar ul li a {
+			color: #efead0;
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			border-radius: 0.8rem;
+		}
+		
+		.sidebar ul li a:hover{
+			background-color: #efead0;
+			color: black;
+		}
+
+		.sidebar ul li a i {
+			min-width: 50px;
+			text-align: center;
+			height: 50px;
+			border-radius: 12px;
+			line-height: 50px;
+		}
+
+		.sidebar .nav-item {
+			opacity: 0;
+			transition: opacity 0.3s ease-in;
+		}
+
+		.sidebar.active .nav-item {
+			opacity: 1;
+		}
+
+		.sidebar ul li .tooltip{
+			position: absolute;
+			left: 125px;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+			border-radius: .5rem;
+			padding: .4rem 1.2rem;
+			line-height: 1.8rem;
+			z-index: 20;
+			opacity: 0;
+		}
+
+		.sidebar ul li:hover .tooltip {
+			opacity: 1;
+		}
+
+		.sidebar.active ul li .tooltip{
+			display: none;
+		}
+
+		.main-content{
+			position: relative;
+			min-height: 100vh;
+			top: 0;
+			left: 80px;
+			transition: all 0.5s ease;
+			width: calc(100%-80px);
+			padding: 1rem;
+		}
+	</style>
+</head>
+<body bgcolor="#efead0">
+
+<nav>
+	<div class="sidebar">
+		<div class="top">
+			<div class="logo">
+				<i class="bx bx-moon"></i>
+				<span>Menu</span>
+			</div>
+			<i class="bx bx-menu" id="btn"></i>
+		</div>
+		<ul>
+			<li>
+				<a href="D:\file sekolah\kelas 10\TIK\Semester 1\Tugas\Nicklein X3 28\HTML website pribadi\index.html">
+					<i class="bx bx-home"></i>
+					<span class="nav-item">Home</span>
+				</a>
+				<span class="tooltip">Home</span>
+			</li>
+
+			<li>
+				<a href="D:\file sekolah\kelas 10\TIK\Semester 1\Tugas\Nicklein X3 28\HTML website pribadi\halaman lain\gallery.html">
+					<i class="bx bx-photo-album"></i>
+					<span class="nav-item">Gallery</span>
+				</a>
+				<span class="tooltip">Gallery</span>
+			</li>
+
+			<li>
+				<a href="D:\file sekolah\kelas 10\TIK\Semester 1\Tugas\Nicklein X3 28\HTML website pribadi\halaman lain\cv.html">
+					<i class="bx bx-briefcase-alt-2"></i>
+					<span class="nav-item">CV</span>
+				</a>
+				<span class="tooltip">CV</span>
+			</li>
+		</ul>
+	</div>
+
+	
+<div class="main-content">
+	<div class="content">
+	<p>
+		<font face="Cursive" color="#292b2e" size="7">
+			<b>
+				Biodata
+			</b>
+		</font>
+	</p>
+	<p>
+		<b>
+			<font size="5" color="#696860" face="Monospace">
+				This is my biodata!!
+			</font>
+		</b>
+	</p>
+	<br>
+	<hr width="950" align="left" color="#8f8e84">
+	<br>
+
+	<article>
+		<div style="width: 950px; padding: 5px;">
+			<center>
+				<h1 align="center">
+					<font size="5" face="Monospace" color="#5f605e">
+						Personal Data
+					</font>
+				</h1>
+			</center>
+		</div>
+
+		<table cellspacing="6" cellpadding="9">
+			<tr>
+				<td><font face="Cursive" color="#333538">Nama</font></td>
+				<td><font face="Cursive" color="#333538">:</font></td>
+				<td><font face="Cursive" color="#333538">Nicklein Nayaka Yoshi</font></td>
+			</tr>
+
+			<tr>
+				<td><font face="Cursive" color="#333538">Jenis Kelamin</font></td>
+				<td><font face="Cursive" color="#333538">:</font></td>
+				<td><font face="Cursive" color="#333538">Laki- Laki</font></td>
+			</tr>
+
+			<tr>
+				<td><font face="Cursive" color="#333538">TTL</font></td>
+				<td><font face="Cursive" color="#333538">:</font></td>
+				<td><font face="Cursive" color="#333538">Tangerang, 11 Maret 2009</font></td>
+			</tr>
+
+			<tr>
+				<td><font face="Cursive" color="#333538">Agama</font></td>
+				<td><font face="Cursive" color="#333538">:</font></td>
+				<td><font face="Cursive" color="#333538">Buddha</font></td>
+			</tr>
+
+			<tr>
+				<td><font face="Cursive" color="#333538">Alamat</font></td>
+				<td><font face="Cursive" color="#333538">:</font></td>
+				<td><font face="Cursive" color="#333538">Jl. Klp. Hybrida Utara VI No.46, Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810</font></td>
+			</tr>
+
+			<tr>
+				<td><font face="Cursive" color="#333538">Email</font></td>
+				<td><font face="Cursive" color="#333538">:</font></td>
+				<td>
+					<a href="tel:+6285214961971">
+						<font face="Cursive" color="#333538">
+							+6285214961971
+						</font>
+					</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td><font face="Cursive" color="#333538">No.HP</font></td>
+				<td><font face="Cursive" color="#333538">:</font></td>
+				<td>
+					<a href="mailto:l0lzn4ti0n@gmail.com">
+						<font face="Cursive" color="#333538">
+							l0lzn4ti0n@gmail.com
+						</font>
+					</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td><font face="Cursive" color="#333538">Hobi</font></td>
+				<td><font face="Cursive" color="#333538">:</font></td>
+				<td><font face="Cursive" color="#333538">Bermain Game</font></td>
+			</tr>
+		</table>
+	</article>
+
+
+		<br>
+
+		<footer>
+			<div style="width: 950px; padding: 20px;">
+				<center>
+					<p>
+						<font face="Monospace" size="4">
+							Copyright by Nicklein
+							<br><br>
+							Maacih :3
+						</font>
+					</p>
+				</center>
+			</div>
+		</footer>
+		</div>	
+	</div>
+</div>
+
+	<script>
+		let btn = document.querySelector('#btn')
+		let sidebar = document.querySelector('.sidebar')
+
+		btn.onclick = function (){
+			sidebar.classList.toggle('active');
+		};
+	</script>
+
+</body>
+</html>
